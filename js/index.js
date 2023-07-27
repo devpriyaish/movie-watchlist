@@ -33,7 +33,6 @@ function renderMovie(id) {
     .catch(error => console.log(error))
 }
 
-
 document.querySelector('.movie-sercher').addEventListener('click', function(e){
   e.preventDefault()
   const url = `https://www.omdbapi.com/?apikey=5b3871c6&s=${movieNameElement.value}`
@@ -56,3 +55,29 @@ document.querySelector('.movie-sercher').addEventListener('click', function(e){
 		})
 		.catch(error => console.log(error))
 })
+
+document.querySelector('.main-content').addEventListener('click', function(e) {
+	if (e.target.dataset.watchlist) {
+		const itemId = e.target.dataset.watchlist
+		console.log(itemId)
+		fetch(`https://www.omdbapi.com/?apikey=5b3871c6&i=${itemId}`)
+		.then(res => res.json())
+		.then(data => {
+			let flag = false
+			for (let item of allItems) {
+				if (item.imdbID === itemId) {
+						flag = true
+				}
+			}
+			if (!flag) {
+				allItems.push(data)
+				localStorage.setItem('item', JSON.stringify(allItems))
+			}
+			else {
+				console.log("You have already added it to the watchlist")
+			}
+		})
+	}
+})
+
+export {allItems}
