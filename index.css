@@ -1,8 +1,8 @@
 html, body {
-	margin: 0;
-	padding: 0;
-	background-color: #121212;
-	color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #FFFFFF;
 }
 
 header {
@@ -10,28 +10,28 @@ header {
 }
 
 .header-info {
-	position: relative;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-info::before {
-	content: '';
-	background-image: url('image/cover.jpg');
-	background-position: 0px 5000px;
-	background-size: cover;
-	position: absolute;
-	inset: 0;
-	opacity: 0.2;
+  content: '';
+  background-image: url('image/cover.jpg');
+  background-position: 0px 5000px;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
 }
 
 .search-bar {
-	display: flex;
-	justify-content: center;
-	position: relative;
-	top: -20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -20px;
 }
 
 .search-bar:hover,
@@ -40,58 +40,58 @@ header {
 }
 
 .search-bar>input {
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 700;
-	padding: 10px 10px;
-	background: #2E2E2F;
-	border: none;
-	color: white;
-	letter-spacing: 1.5px;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	width: 60%;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 700;
+  padding: 10px 10px;
+  background: #2E2E2F;
+  border: none;
+  color: white;
+  letter-spacing: 1.5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 60%;
 }
 
 .search-bar>button {
-	font-weight: 700;
-	padding: 10px 50px;
-	background: #4B4B4B;
-	border: none;
-	color: white;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	letter-spacing: 1px;
-	width: 20%;
+  font-weight: 700;
+  padding: 10px 50px;
+  background: #4B4B4B;
+  border: none;
+  color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  letter-spacing: 1px;
+  width: 20%;
 }
 
 header>div>h1 {
-	isolation: isolate;
-	margin: 10%;
-	font-size: 40px;
+  isolation: isolate;
+  margin: 10%;
+  font-size: 40px;
 }
 
 header>div>h3 {
-	isolation: isolate;
-	margin: 10%;
-	font-size: 25px;
-	padding-top: 10px;
+  isolation: isolate;
+  margin: 10%;
+  font-size: 25px;
+  padding-top: 10px;
 }
 
 header>div>h3>a {
-	text-decoration: none;
-	color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .pre-search {
-	display: flex;
-	flex-direction: column;
-	justify-content: center ;
-	align-items: center;
-	color: #2E2E2F;
-	gap: 20px;
-	font-weight: bold;
-	font-size: 18px;
-	padding: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center ;
+  align-items: center;
+  color: #2E2E2F;
+  gap: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 15%;
 }
 
 .main-content {
@@ -104,8 +104,8 @@ header>div>h3>a {
 }
 
 .post-search {
-	display: flex;
-	gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .post-search>img {
@@ -113,60 +113,60 @@ header>div>h3>a {
 }
 
 .main-info {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap:10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:10%;
 }
 
 .main-info>h4 {
-	width: 90px;
-	text-align: right;
+  width: 90px;
+  text-align: right;
 }
 
 .detailed-info {
-	display: flex;
-	align-items: center;
-	gap: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
 .detailed-info>div>button {
-	border: 1px solid black;
-	border-radius: 50%;
-	margin-right: 5px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
 hr {
-	border: 2px solid #2C2C2C;
-	margin: 20px 0;
+  border: 2px solid #2C2C2C;
+  margin: 20px 0;
 }
 
 .error {
-	font-size: 30px;
-	color: #2E2E2F;
-	font-weight: bold;
-	text-align: center;
-	vertical-align: middle;
-	padding: 150px 10px;
+  font-size: 30px;
+  color: #2E2E2F;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  padding: 150px 10px;
 }
 
 .initial-message {
-	font-size: 20px;
-	color: #2E2E2F;
-	font-weight: bold;
-	text-align: center;
-	vertical-align: middle;
-	padding: 150px 10px 5px;
+  font-size: 20px;
+  color: #2E2E2F;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  padding: 150px 10px 5px;
 }
 
 .main-content>div {
-	text-align: center;
+  text-align: center;
 }
 
 .main-content>div>button {
-	border: 1px solid black;
-	border-radius: 50%;
-	margin-right: 5px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
 .plot {
