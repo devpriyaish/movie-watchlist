@@ -7,6 +7,9 @@ html, body {
 
 header {
   height: 208px;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 .header-info {
@@ -80,6 +83,10 @@ header>div>h3 {
 header>div>h3>a {
   text-decoration: none;
   color: white;
+}
+
+main {
+	margin-top: 210px;
 }
 
 .pre-search {
@@ -172,4 +179,23 @@ hr {
 
 .plot {
   text-align:  left;
+}
+
+.add-to-watchlist {
+	cursor: pointer;
+}
+
+.sub-title-watchlist {
+	font-size: small;
+}
+
+.sub-title-watchlist>a {
+	text-decoration: none;
+	color: white;
+}
+
+.back-to-search {
+	margin-top: 10px;
+	border-radius: 50%;
+	cursor: pointer;
 }
