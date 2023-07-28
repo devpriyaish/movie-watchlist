@@ -67,13 +67,25 @@ document.querySelector('.main-content').addEventListener('click', function(e) {
 						flag = true
 				}
 			}
+			document.querySelector('.response').classList.remove('visible-response')
 			if (!flag) {
 				allItems.push(data)
 				localStorage.setItem('item', JSON.stringify(allItems))
+				document.querySelector('.movie-added').classList.remove('visible-response')
+				setTimeout(function() {
+					document.querySelector('.movie-added').classList.add('visible-response')
+				}, 1500)
 			}
 			else {
-				console.log("You have already added it to the watchlist")
+				document.querySelector('.movie-already-added').classList.remove('visible-response')
+				setTimeout(function() {
+					document.querySelector('.movie-already-added').classList.add('visible-response')
+				}, 1500)
 			}
+			setTimeout(function() {
+				document.querySelector('.response').classList.add('visible-response')
+			}, 1500)
 		})
+		.catch(error => console.log(error))
 	}
 })

@@ -200,3 +200,23 @@ hr {
 	border-radius: 50%;
 	cursor: pointer;
 }
+
+.response {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	padding: 5px 10px;
+	background-color: #4B4B4B;
+	color: #FFFFFF;
+	border-radius: 5px;
+	opacity: 0.5;
+}
+
+.visible-response {
+	display: none;
+}
+
+.disable-button {
+	cursor: not-allowed;
+	background-color: #4B4B4B;
+}
