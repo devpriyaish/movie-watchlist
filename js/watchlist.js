@@ -1,5 +1,3 @@
-// import {allItems} from './index.js'
-
 window.onload = function() {
   document.querySelector('.pre-search-2').innerHTML = ''
   let value = JSON.parse(localStorage.getItem('item'));
@@ -33,13 +31,11 @@ document.querySelector('.main-content').addEventListener('click', function(e) {
   e.preventDefault()
   let allItems = JSON.parse(localStorage.getItem('item'))
   const removeItemId = e.target.dataset.watchlist
-  console.log(allItems, removeItemId)
   let result = allItems.filter(function(item) {
     if (item.imdbID != removeItemId) {
       return item
     }
   })
   localStorage.setItem('item', JSON.stringify(result))
-  console.log(result)
   location.reload()
 })

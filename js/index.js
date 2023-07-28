@@ -79,5 +79,3 @@ document.querySelector('.main-content').addEventListener('click', function(e) {
 		})
 	}
 })
-
-export {allItems}
