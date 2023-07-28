@@ -181,7 +181,8 @@ hr {
   text-align:  left;
 }
 
-.add-to-watchlist {
+.add-to-watchlist,
+.remove-from-watchlist {
 	cursor: pointer;
 }
 

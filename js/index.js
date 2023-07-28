@@ -6,7 +6,6 @@ function renderMovie(id) {
   fetch(`https://www.omdbapi.com/?apikey=5b3871c6&i=${id}`)
     .then(res => res.json())
     .then(data => {
-      // console.log(data)
       document.querySelector('.main-content').innerHTML += `
         <div class="post-search" id="${data.imdbID}">
             <img src="${data.Poster}"> 
@@ -59,7 +58,6 @@ document.querySelector('.movie-sercher').addEventListener('click', function(e){
 document.querySelector('.main-content').addEventListener('click', function(e) {
 	if (e.target.dataset.watchlist) {
 		const itemId = e.target.dataset.watchlist
-		console.log(itemId)
 		fetch(`https://www.omdbapi.com/?apikey=5b3871c6&i=${itemId}`)
 		.then(res => res.json())
 		.then(data => {
