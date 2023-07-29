@@ -32,7 +32,7 @@ function renderMovie(id) {
 		.catch(error => console.log(error))
 }
 
-document.querySelector('.movie-sercher').addEventListener('click', function (e) {
+document.querySelector('.movie-sercher').addEventListener('click', e => {
 	e.preventDefault()
 	const url = `https://www.omdbapi.com/?apikey=5b3871c6&s=${movieNameElement.value}`
 	fetch(url)
@@ -41,49 +41,47 @@ document.querySelector('.movie-sercher').addEventListener('click', function (e) 
 			if (!data.Search) {
 				document.querySelector('.main-content').innerHTML = `
 					<div class="error">
-						<label> Unable to find what you’re looking for. Please try another search.</label>
+						<label> 
+							Unable to find what you’re looking for. Please try another search.
+						</label>
 					</div>
 				`
 			}
 			else {
 				document.querySelector('.main-content').innerHTML = ''
-				for (data of data.Search) {
-					renderMovie(data.imdbID)
-				}
+				data.Search.forEach((data) => renderMovie(data.imdbID));	
 			}
 		})
 		.catch(error => console.log(error))
 })
 
-document.querySelector('.main-content').addEventListener('click', function (e) {
+document.querySelector('.main-content').addEventListener('click', e => {
 	if (e.target.dataset.watchlist) {
 		const itemId = e.target.dataset.watchlist
 		fetch(`https://www.omdbapi.com/?apikey=5b3871c6&i=${itemId}`)
 			.then(res => res.json())
 			.then(data => {
-				let flag = false
-				for (let item of allItems) {
-					if (item.imdbID === itemId) {
-						flag = true
-					}
-				}
-				document.querySelector('.response').classList.remove('visible-response')
+				const flag = allItems.some(item => item.imdbID === itemId)
+				const response = document.querySelector('.response')
+				const movieAdded = document.querySelector('.movie-added')
+				const movieAlreadyAdded = document.querySelector('.movie-already-added')
+				response.classList.toggle('visible-response')
 				if (!flag) {
 					allItems.push(data)
 					localStorage.setItem('item', JSON.stringify(allItems))
-					document.querySelector('.movie-added').classList.remove('visible-response')
+					movieAdded.classList.toggle('visible-response')
 					setTimeout(function () {
-						document.querySelector('.movie-added').classList.add('visible-response')
+						movieAdded.classList.toggle('visible-response')
 					}, 1500)
 				}
 				else {
-					document.querySelector('.movie-already-added').classList.remove('visible-response')
+					movieAlreadyAdded.classList.toggle('visible-response')
 					setTimeout(function () {
-						document.querySelector('.movie-already-added').classList.add('visible-response')
+						movieAlreadyAdded.classList.toggle('visible-response')
 					}, 1500)
 				}
 				setTimeout(function () {
-					document.querySelector('.response').classList.add('visible-response')
+					response.classList.toggle('visible-response')
 				}, 1500)
 			})
 			.catch(error => console.log(error))
