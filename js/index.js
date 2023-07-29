@@ -49,7 +49,7 @@ document.querySelector('.movie-sercher').addEventListener('click', e => {
 			}
 			else {
 				document.querySelector('.main-content').innerHTML = ''
-				data.Search.forEach((data) => renderMovie(data.imdbID));	
+				data.Search.forEach((data) => renderMovie(data.imdbID))
 			}
 		})
 		.catch(error => console.log(error))
