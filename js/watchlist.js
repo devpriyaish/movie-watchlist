@@ -45,15 +45,11 @@ window.onload = function() {
   }
 }
 
-document.querySelector('.main-content').addEventListener('click', function(e) {
+document.querySelector('.main-content').addEventListener('click', e => {
   e.preventDefault()
   let allItems = JSON.parse(localStorage.getItem('item'))
   const removeItemId = e.target.dataset.watchlist
-  let result = allItems.filter(function(item) {
-    if (item.imdbID != removeItemId) {
-      return item
-    }
-  })
+  let result = allItems.filter(item => item.imdbID !== removeItemId)
   localStorage.setItem('item', JSON.stringify(result))
   location.reload()
 })
