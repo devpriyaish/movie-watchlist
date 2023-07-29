@@ -1,3 +1,5 @@
+const allItems = JSON.parse(localStorage.getItem('item')) || []
+
 window.onload = function() {
   document.querySelector('.pre-search-2').innerHTML = ''
   let value = JSON.parse(localStorage.getItem('item'));
@@ -45,11 +47,10 @@ window.onload = function() {
   }
 }
 
-document.querySelector('.main-content').addEventListener('click', e => {
-  e.preventDefault()
-  let allItems = JSON.parse(localStorage.getItem('item'))
-  const removeItemId = e.target.dataset.watchlist
-  let result = allItems.filter(item => item.imdbID !== removeItemId)
-  localStorage.setItem('item', JSON.stringify(result))
+document.querySelector('.main-content').addEventListener('click', event => {
+  event.preventDefault()
+  const removeItemId = event.target.dataset.watchlist
+  const filteredItems = allItems.filter(item => item.imdbID !== removeItemId)
+  localStorage.setItem('item', JSON.stringify(filteredItems))
   location.reload()
 })
